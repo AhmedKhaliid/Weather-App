@@ -1,26 +1,16 @@
-import React from 'react';
-//import './App.css'
-import {
-  QueryClient,
-  QueryClientProvider,
-} from 'react-query'
-import Forecast from './component/Forecast'
+import React from "react";
+import { QueryClient, QueryClientProvider } from "react-query";
+import Forecast from "./component/Forecast";
 
-const queryClient = new QueryClient()
+const queryClient = new QueryClient();
 
 function App() {
-
   return (
-  <div className='w-full bg-backgroundColor  min-h-screen'>
-    <QueryClientProvider client={queryClient}>
-   <Forecast />
+    <div className="w-full bg-backgroundColor  min-h-screen">
+      <QueryClientProvider client={queryClient}>
+        <Forecast />
       </QueryClientProvider>
-      </div>
-  )
+    </div>
+  );
 }
-export default App
-//  {
-//   "semi": true,
-//     "singleQuote": true,
-//     "tabWidth": 2
-//   }
+export default App;
