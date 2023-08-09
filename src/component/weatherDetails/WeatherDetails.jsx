@@ -3,8 +3,8 @@ import { IoLocationOutline } from "react-icons/io5";
 import SunriseSunsetInfo from "./SunriseSunsetInfo";
 import { useEffect } from "react";
 import { useState } from "react";
-import sunrisePic from "../image/sunrise.png";
-import sunsetPic from "../image/sunset.png";
+import sunrisePic from "../../image/sunrise.png";
+import sunsetPic from "../../image/sunset.png";
 import WeatherElementsView from "./WeatherElementsView";
 
 const WeatherDetails = ({

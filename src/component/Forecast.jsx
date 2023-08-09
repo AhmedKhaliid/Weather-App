@@ -1,10 +1,10 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { useQuery } from "react-query";
-import WeatherDetails from "./WeatherDetails";
+import WeatherDetails from "./weatherDetails/WeatherDetails";
 import { countriesName } from "../api/main";
 import { forecast } from "../api/main";
-import WeatherView from "./WeatherView";
+import WeatherView from "./weatherView/WeatherView";
 import loadingImg from "../image/loadingImg.png";
 
 const Forecast = () => {
