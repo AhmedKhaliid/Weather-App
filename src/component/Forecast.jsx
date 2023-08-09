@@ -82,8 +82,7 @@ const Forecast = () => {
       setTimeDate(weather["time"]);
     }
   }, [weather]);
-  console.log("weatherData", weatherData);
-  console.log("timeDate", timeDate);
+
   return (
     <>
       {isLoading && (

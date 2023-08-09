@@ -12,7 +12,7 @@ const NextDayWeatherCard = forwardRef(
       const day = moment(fullDate).format("dddd");
       return day;
     };
-    console.log("allWeekWeather", allWeekWeather);
+
     return (
       <div
         ref={ref}
