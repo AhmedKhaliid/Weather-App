@@ -1,6 +1,6 @@
 import React from "react";
 import { QueryClient, QueryClientProvider } from "react-query";
-import Forecast from "./component/Forecast";
+import Forecast from "./pages/Forecast";
 
 const queryClient = new QueryClient();
 
