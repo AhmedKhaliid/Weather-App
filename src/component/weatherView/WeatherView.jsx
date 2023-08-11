@@ -28,8 +28,9 @@ const WeatherView = ({ weather, timeDate, allWeekWeather }) => {
   }, [weather]);
   useEffect(() => {
     if (timeDate) {
-      setTime(moment(timeDate).format("dddd h:mm a"));
-      setDate(moment(timeDate).format("Do MMM YYYY"));
+      const date = new Date(timeDate);
+      setTime(moment(date).format("dddd h:mm a"));
+      setDate(moment(date).format("Do MMM YYYY"));
     }
   }, [timeDate]);
 
