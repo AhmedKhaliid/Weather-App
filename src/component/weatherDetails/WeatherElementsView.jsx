@@ -1,22 +1,23 @@
+/**
+ *  README:
+ *  - try not to repeat yourself
+ *  - use clear names
+ *  - remove popTypes
+ *
+ */
+
 import React from "react";
 import { BsWind } from "react-icons/bs";
 
 const WeatherElementsView = ({ weatherElemntsObj, weatherWind }) => {
-  WeatherElementsView.propTypes;
-
   return (
     <div>
       <div className="flex justify-between mt-5 pr-10 pl-10 font-extralight text-3xl">
-        <WeatherElementsViewUI
-          status={weatherElemntsObj.avgHum}
-          percentage={weatherElemntsObj.humPercentage}
-          sign={weatherElemntsObj.sign}
-        />
+        <ContentView title={weatherElemntsObj.avgHum} value={weatherElemntsObj.humPercentage} />
 
-        <WeatherElementsViewUI
-          status={weatherElemntsObj.rain}
-          percentage={weatherElemntsObj.rainPercentage}
-          sign={weatherElemntsObj.sign}
+        <ContentView
+          title={weatherElemntsObj.rain}
+          value={`${weatherElemntsObj.rainPercentage} ${weatherElemntsObj.sign}`}
         />
       </div>
       <div className="mt-8 mb-5 font-extralight text-3xl flex flex-col items-center">
@@ -32,18 +33,15 @@ const WeatherElementsView = ({ weatherElemntsObj, weatherWind }) => {
     </div>
   );
 };
+
 export default WeatherElementsView;
 
-const WeatherElementsViewUI = ({ status, percentage, sign }) => {
-  WeatherElementsViewUI.propTypes;
-
+// const WeatherItem = ({ title, value }) => {
+const ContentView = ({ title, value }) => {
   return (
     <div className=" flex flex-col items-center">
-      <p>{status}</p>
-      <p>
-        {percentage}
-        {sign}
-      </p>
+      <p>{title}</p>
+      <p>{value}</p>
     </div>
   );
 };

@@ -20,10 +20,8 @@ const NextDayWeather = ({ allWeekWeather, tempCelsius }) => {
 
   const scrollRight = () => {
     forward.current.scrollLeft += 468;
-    const maxScrollLeft =
-      forward.current.scrollWidth - forward.current.clientWidth;
-    const isScrollingNearRight =
-      forward.current.scrollLeft >= maxScrollLeft - 468;
+    const maxScrollLeft = forward.current.scrollWidth - forward.current.clientWidth;
+    const isScrollingNearRight = forward.current.scrollLeft >= maxScrollLeft - 468;
     if (isScrollingNearRight) {
       setForwardArrow(false);
       setBackwardArrow(true);
@@ -33,8 +31,7 @@ const NextDayWeather = ({ allWeekWeather, tempCelsius }) => {
 
   const scrollLeft = () => {
     forward.current.scrollLeft -= 468;
-    const isScrollingNearRight =
-      forward.current.scrollLeft <= forward.current.clientWidth + 28;
+    const isScrollingNearRight = forward.current.scrollLeft <= forward.current.clientWidth + 28;
     if (isScrollingNearRight) {
       setBackwardArrow(false);
       setForwardArrow(true);
@@ -46,30 +43,19 @@ const NextDayWeather = ({ allWeekWeather, tempCelsius }) => {
     <div className="flex">
       {moreThanThreeDays && (
         <div className="w-10 h-52 mt-16 flex items-center justify-center ">
+          {/* TODO: move conditional one level above  */}
           {backwardArrow && (
-            <IoIosArrowBack
-              onClick={scrollLeft}
-              className=" cursor-pointer"
-              size={60}
-            />
+            <IoIosArrowBack onClick={scrollLeft} className=" cursor-pointer" size={60} />
           )}
         </div>
       )}
 
-      <NextDayWeatherCard
-        allWeekWeather={allWeekWeather}
-        tempCelsius={tempCelsius}
-        ref={forward}
-      />
+      <NextDayWeatherCard allWeekWeather={allWeekWeather} tempCelsius={tempCelsius} ref={forward} />
 
       {moreThanThreeDays && (
         <div className="w-10 h-52 mt-16 flex items-center justify-center">
           {forwardArrow && (
-            <IoIosArrowForward
-              onClick={scrollRight}
-              className=" cursor-pointer"
-              size={60}
-            />
+            <IoIosArrowForward onClick={scrollRight} className=" cursor-pointer" size={60} />
           )}
         </div>
       )}
