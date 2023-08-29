@@ -1,14 +1,7 @@
 import React from "react";
 import SunriseSunsetCard from "./SunriseSunsetCard";
 
-const SunriseSunsetInfo = ({
-  weatherDate,
-  sunrise,
-  sunset,
-  sunriseSunsetObj,
-}) => {
-  SunriseSunsetInfo.propTypes;
-
+const SunriseSunsetInfo = ({ weatherDate, sunrise, sunset, sunriseSunsetObj }) => {
   return (
     <div className="flex justify-between pt-14 pl-8 pr-8">
       <SunriseSunsetCard
@@ -18,7 +11,6 @@ const SunriseSunsetInfo = ({
         time={sunriseSunsetObj.sunriseTime}
         pic={sunriseSunsetObj.sunrisePic}
       />
-
       <SunriseSunsetCard
         weatherDate={weatherDate}
         sunset={sunset}
